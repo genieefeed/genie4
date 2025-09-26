@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>GenieeFeed — TikTok Tools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+  <style>
+    :root{
+      --bg:#0f1115;--card:#151924;--muted:#93a0b4;--text:#e9eef6;--brand:#00f2ea;--brand-ink:#002b2a;
+      --line:#232a3a;--accent:#7aa2f7;--ok:#22c55e;--warn:#f59e0b;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#0b0e13, #0f1115);color:var(--text);font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}
+    a{color:var(--brand)} a:hover{opacity:.9}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;border:1px solid var(--line);background:rgba(21,25,36,.6);backdrop-filter: blur(8px);border-radius:16px;position:sticky;top:16px}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .logo svg{width:28px;height:28px}
+    .links{display:flex;gap:18px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);text-decoration:none;color:var(--text);background:transparent}
+    .btn.primary{background:var(--brand);color:var(--brand-ink);border-color:transparent;font-weight:800}
+    .btn svg{width:18px;height:18px}
+    .hero{display:grid;grid-template-columns: 1.2fr .8fr;gap:28px;margin:28px 0}
+    @media (max-width:900px){.hero{grid-template-columns: 1fr}}
+    .card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(26,31,45,.7), rgba(20,23,35,.7));border-radius:18px;padding:22px}
+    .title{font-size:clamp(28px,4vw,40px);line-height:1.1;margin:4px 0 10px}
+    .subtitle{color:var(--muted);font-size:clamp(14px,2.2vw,16px)}
+    .features{display:grid;grid-template-columns: repeat(3,minmax(0,1fr));gap:14px;margin:18px 0}
+    @media (max-width:900px){.features{grid-template-columns:1fr 1fr}}
+    @media (max-width:600px){.features{grid-template-columns:1fr}}
+    .fi{display:flex;gap:12px;border:1px dashed var(--line);padding:14px;border-radius:14px;background:rgba(17,20,30,.55)}
+    .fi svg{min-width:22px}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    footer{margin:28px 0;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .note{border:1px solid var(--line);border-radius:12px;padding:12px;background:rgba(17,20,30,.5);color:var(--muted);font-size:14px}
+    .shadow-lg{box-shadow:0 24px 60px rgba(0,0,0,.35)}
+    .illus{aspect-ratio:4/3;border-radius:16px;display:grid;place-items:center;border:1px solid var(--line);background:
+      radial-gradient(60% 60% at 30% 40%, rgba(0,242,234,.16), transparent 60%),
+      radial-gradient(60% 60% at 70% 60%, rgba(122,162,247,.18), transparent 60%),
+      linear-gradient(180deg, rgba(17,21,31,.6), rgba(14,16,24,.8));
+    }
+    .illus svg{width:68%;height:auto;opacity:.92}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width:800px){.grid-2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav shadow-lg">
+      <div class="logo">
+        <!-- Logo -->
+        <svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#00f2ea"/><stop offset="1" stop-color="#7aa2f7"/></linearGradient></defs>
+          <rect rx="10" ry="10" width="48" height="48" fill="url(#g)"></rect>
+          <path d="M17 33c6 5 15 1 15-7V10h-4v8c-3-2-7-2-10 0-4 3-5 9-1 13z" fill="#0f1115"></path>
+        </svg>
+        GenieeFeed
+      </div>
+      <div class="links">
+        <a class="btn" href="/privacy.html">Privacy</a>
+        <a class="btn" href="/terms.html">Terms</a>
+        <a class="btn primary" href="https://www.tiktok.com/v2/auth/authorize/?client_key=YOUR_CLIENT_KEY&response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2Fauth%2Ftiktok%2Fcallback&scope=user.info.basic" target="_blank" rel="noopener">
+          <!-- TikTok-ish icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h3a5 5 0 0 0 5 5v3a8 8 0 1 1-8-8z" fill="currentColor"/></svg>
+          Login with TikTok
+        </a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="card shadow-lg">
+        <h1 class="title">Creator tools that don’t suck.</h1>
+        <p class="subtitle">A tiny demo site for review purposes. Shows pages, policies, and a TikTok login button that opens TikTok OAuth.</p>
+        <div class="features">
+          <div class="fi">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 2 7-7-4-7 4 2-7-5-5 7-1z" fill="var(--accent)"/></svg>
+            <div><strong>Clean design</strong><div class="subtitle">Hand‑rolled UI, mobile friendly.</div></div>
+          </div>
+          <div class="fi">
+            <svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" stroke="var(--ok)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            <div><strong>Simple pages</strong><div class="subtitle">Home · Privacy · Terms.</div></div>
+          </div>
+          <div class="fi">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="var(--warn)" stroke-width="2" fill="none"/><path d="M12 7v6" stroke="var(--warn)" stroke-width="2"/><circle cx="12" cy="16.5" r="1.2" fill="var(--warn)"/></svg>
+            <div><strong>Reviewer notes</strong><div class="subtitle">Static demo; no real data is stored.</div></div>
+          </div>
+        </div>
+        <div class="note mono">Tip: For the review video, click <strong>Privacy</strong>, <strong>Terms</strong>, then <strong>Login with TikTok</strong> (opens tiktok.com).</div>
+      </div>
+      <div class="card illus shadow-lg" aria-hidden="true">
+        <!-- fun equalizer -->
+        <svg viewBox="0 0 200 150">
+          <rect x="20"  y="60" width="20" height="50" rx="6" fill="var(--brand)"/>
+          <rect x="60"  y="35" width="20" height="75" rx="6" fill="var(--accent)"/>
+          <rect x="100" y="20" width="20" height="90" rx="6" fill="var(--brand)"/>
+          <rect x="140" y="45" width="20" height="65" rx="6" fill="var(--accent)"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="card">
+        <h3>What is this?</h3>
+        <p>This is a <em>presentation-only</em> landing page for app review. It proves we host a site, have policies, and link to TikTok OAuth.</p>
+      </div>
+      <div class="card">
+        <h3>Is it collecting data?</h3>
+        <p>No. There’s no backend here. Everything is static HTML/CSS; the TikTok button just opens tiktok.com’s OAuth page.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> GenieeFeed</div>
+      <div class="subtitle">Not affliated with or endorsed by TikTok.</div>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
